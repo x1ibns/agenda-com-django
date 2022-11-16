@@ -3,10 +3,10 @@ from app_agenda.models import Evento
 
 # Create your views here.
 def hello(request):
-    return HttpResponse('<h1>hello</h1>')
+    return HttpResponse('<h1>Bem-vindo à agenda</h1>')
 
 
 def lista_eventos(request):
     evento = Evento.objects.all()
-    data = ({'evento': evento})
+    data = {'eventos': evento}
     return render(request, 'agenda.html', data)
